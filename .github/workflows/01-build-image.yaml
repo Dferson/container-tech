@@ -25,6 +25,9 @@ jobs:
       - name: Calculate version
         id: calculate-version
         uses: bitshifted/git-auto-semver@v1
+        
+    - name: Debug version
+        run: echo "Version: ${{ steps.calculate-version.outputs.version-string }}"
 
         # https://github.com/marketplace/actions/git-automatic-semantic-versioning
       - name: Use version
